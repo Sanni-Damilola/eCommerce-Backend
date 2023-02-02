@@ -5,10 +5,10 @@ import userModel from "../Models/user.models";
 // Register Users:
 export const RegisterUsers = AsyncHandler(
   async (
-    req: Request<{}, {}, IU>, 
+    req: Request<{}, {}, >, 
     res: Response,
     next: NextFunction
   ): Promise<Response> => {
-    const { name } = req.body;
+    const { name, email, password, confirmPassword  } = req.body;
   }
 );
