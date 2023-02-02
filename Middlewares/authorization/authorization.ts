@@ -12,8 +12,9 @@ export const generateToken = (user: payLoad) => {
 };
 
 
-// verify and authorize the user
+// verify and authorize the user+
 
 export const userAuth = (req: Request, res: Response) => {
     // make request for our token  from headers in HTTP
+
 }
