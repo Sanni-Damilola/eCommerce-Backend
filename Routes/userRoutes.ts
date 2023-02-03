@@ -1,5 +1,6 @@
 import { Router } from "express";
-import { login, RegisterUsers } from "../Controllers/user.controller";
+import { getAll, login, RegisterUsers } from "../Controllers/user.controller";
+import { userAuth } from "../Middlewares/authorization/authorization";
 import {
   LoginValidation,
   RegisterValidation,
@@ -8,6 +9,6 @@ import {
 const route = Router();
 route.route("/register").post(RegisterValidation, RegisterUsers);
 route.route("/login").post(LoginValidation, login);
-
+route.route("/").get(userAuth, getAll)
 
 export default route

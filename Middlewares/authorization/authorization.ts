@@ -1,4 +1,4 @@
-import { NextFunction } from "express";
+import { NextFunction, Request, Response } from "express";
 import jwt, { JwtPayload, Secret, VerifyErrors } from "jsonwebtoken";
 import { UserData } from "../../Models/AllInterfaces";
 import userModel from "../../Models/user.models";
@@ -65,8 +65,8 @@ export const userAuth = (req: Request, res: Response, next: NextFunction) => {
       } catch (error: any) {
         next(
           new AppError({
-            message: "",
-            httpCode: HttpCode.UNAUTHORIZED,
+            message: error,
+            httpCode: HttpCode.INTERNAL_SERVER_ERROR,
           })
         );
       }

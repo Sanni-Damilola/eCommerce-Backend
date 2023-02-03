@@ -1,7 +1,7 @@
-import * as express from "express";
+import * as Express from "express";
 
 declare global {
-  namespace express {
+  namespace Express {
     interface Request {
       user?: Record<string, any>;
     }

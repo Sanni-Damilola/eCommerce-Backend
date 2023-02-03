@@ -73,3 +73,13 @@ export const login = AsyncHandler(
     });
   }
 );
+
+export const getAll = AsyncHandler(
+  async (req: Request, res: Response, next: NextFunction) => {
+    const getAllUsers = await userModel.find();
+    return res.status(HttpCode.OK).json({
+      message: "Successfully gotten All User",
+      data: getAllUsers,
+    });
+  }
+);
