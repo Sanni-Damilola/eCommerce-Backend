@@ -1,0 +1,22 @@
+Build an E-commerce Api:
+
+step 1: Authorization and Authentication.
+
+- Endpoints: Register and Login
+- Methods: Post
+- Packages: bcyrpt, joi, express, mongoose, validator, dotenv, jsonwebtoken, cors
+
+Step 2: Post Products
+
+- Endpoints: Post Products, Update Products, Get all/single products, delete Products
+- Methods: Post, Patch, Get, delete
+- Packages: 
+
+
+Step 3: Order for products
+
+- Endpoints: Order Products / Add to cart
+
+Step 4: API Features
+
+- Endpoints: Pagination, filter, sort and search

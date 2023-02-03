@@ -15,7 +15,7 @@ export enum HttpCode {
 interface ErrorArgs {
   name?: string;
   isOperational?: boolean;
-  message: string;
+  message?: string;
   httpCode: HttpCode;
 }
 
