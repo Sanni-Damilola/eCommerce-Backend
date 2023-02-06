@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from "express";
 import jwt, { JwtPayload, Secret, VerifyErrors } from "jsonwebtoken";
-import { UserData } from "../../Models/AllInterfaces";
+import { IUserData } from "../../Models/AllInterfaces";
 import userModel from "../../Models/user.models";
 import { AppError, HttpCode } from "../../Utils/AppError";
 

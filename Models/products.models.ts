@@ -23,9 +23,25 @@ const ProductSchema: Schema<Products> = new Schema(
       required: [true, "Please enter product category e.g Fashion, Food"],
     },
     rating: {
-      type: String,
-      required: [true, "Please rate this product"],
+      type: Number,
+      default: 0,
     },
+    numberOfReviews: {
+      type: Number,
+      default: 0,
+    },
+    reviews: [
+      {
+        user: {
+          types: Schema.Types.ObjectId,
+          ref: "",
+          required: true,
+        },
+        name: { type: String, required: true },
+        rating: { type: String, required: true },
+        comment: { type: String, required: true },
+      },
+    ],
   },
   {
     versionKey: false,

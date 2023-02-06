@@ -13,13 +13,12 @@ export interface IUserData extends Document {
   email: string;
   password: string;
   confirmPassword: string;
-  userId?: Schema.Types.ObjectId;
-  cart?: {
-    items: {
-      products: Schema.Types.ObjectId;
-    };
-    quantity: number;
-  }[];
+  // cart?: {
+  //   items: {
+  //     products: Schema.Types.ObjectId;
+  //   };
+  //   quantity: number;
+  // }[];
   role: string;
 }
 
@@ -28,7 +27,7 @@ export interface IProductData extends Document {
   name: string;
   price: number;
   category: string;
-  rating: string;
+  rating: number;
   productImage: string;
   numberOfReviews: number;
   review: reviewT[];
