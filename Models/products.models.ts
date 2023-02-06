@@ -1,8 +1,8 @@
 import { Schema, model } from "mongoose";
 
-import { ProductData } from "./AllInterfaces";
+import { IProductData } from "./AllInterfaces";
 
-interface Products extends Document, ProductData {}
+interface Products extends Document, IProductData {}
 
 const ProductSchema: Schema<Products> = new Schema(
   {

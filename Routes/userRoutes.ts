@@ -9,6 +9,6 @@ import {
 const route = Router();
 route.route("/register").post(RegisterValidation, RegisterUsers);
 route.route("/login").post(LoginValidation, login);
-route.route("/").get(userAuth, getAll)
+route.route("/").get(userAuth, getAll);
 
-export default route
+export default route;

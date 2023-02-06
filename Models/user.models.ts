@@ -1,9 +1,9 @@
 import { model, Schema, Document } from "mongoose";
 import isEmail from "validator/lib/isEmail";
 
-import { UserData } from "./AllInterfaces";
+import { IUserData } from "./AllInterfaces";
 
-interface Users extends Document, UserData {}
+interface Users extends Document, IUserData {}
 
 const userSchema: Schema<Users> = new Schema(
   {
@@ -29,7 +29,6 @@ const userSchema: Schema<Users> = new Schema(
       required: [true, "Confirm your password"],
       minlength: 6,
     },
-    
   },
   {
     versionKey: false,

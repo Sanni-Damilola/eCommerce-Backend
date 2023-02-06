@@ -60,13 +60,13 @@ export const userAuth = (req: Request, res: Response, next: NextFunction) => {
             })
           );
         }
-        req!.user = verifiedUser as UserData;
+        req!.user = verifiedUser as IUserData;
         next();
       } catch (error: any) {
         next(
           new AppError({
-            message: error,
             httpCode: HttpCode.INTERNAL_SERVER_ERROR,
+            message: error,
           })
         );
       }
