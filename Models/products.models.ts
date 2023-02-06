@@ -21,6 +21,17 @@ const ProductSchema: Schema<Products> = new Schema(
     category: {
       type: String,
       required: [true, "Please enter product category e.g Fashion, Food"],
+      enum: [
+        "all",
+        "men's wear",
+        "women's  wear",
+        "eletronics",
+        "mobile phone",
+        "books",
+      ],
+      message:
+        "Please enter category as supplied: all, men's women wear, electronics, book, phone",
+      default: "all",
     },
     rating: {
       type: Number,
@@ -34,7 +45,7 @@ const ProductSchema: Schema<Products> = new Schema(
       {
         user: {
           types: Schema.Types.ObjectId,
-          ref: "",
+          ref: "Users Collection",
           required: true,
         },
         name: { type: String, required: true },

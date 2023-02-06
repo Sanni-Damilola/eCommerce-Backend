@@ -29,6 +29,13 @@ const userSchema: Schema<Users> = new Schema(
       required: [true, "Confirm your password"],
       minlength: 6,
     },
+    role: {
+      type: String,
+      required: true,
+      enum: ["admin", "user", "manager"],
+      message: `Please identify your role as provided: admin, user, manager`,
+      default: "user",
+    },
   },
   {
     versionKey: false,

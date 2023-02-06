@@ -6,13 +6,14 @@ import morgan from "morgan";
 
 import { AppError, HttpCode } from "./Utils/AppError";
 import { ErrorHandler } from "./Middlewares/ErrorHandler/ErrorHandler";
-
+import productRoute from "./Routes/productRoute";
 export const AppConfig = (app: Application) => {
   app
     .use(express.json())
     .use(cors())
     .use(morgan("dev"))
-    .use("/api", userRoutes);
+    .use("/api", userRoutes)
+    .use("/api", productRoute);
 
   // Wrong routes:
   app.all("*", (req: Request, res: Response, next: NextFunction) => {
