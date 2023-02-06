@@ -1,4 +1,4 @@
-import { Schema, model } from "mongoose";
+import { Schema, model, Document } from "mongoose";
 
 import { IProductData } from "./AllInterfaces";
 
@@ -41,11 +41,11 @@ const ProductSchema: Schema<Products> = new Schema(
       type: Number,
       default: 0,
     },
-    reviews: [
+    review: [
       {
         user: {
           types: Schema.Types.ObjectId,
-          ref: "Users Collection",
+          ref: "Users",
           required: true,
         },
         name: { type: String, required: true },

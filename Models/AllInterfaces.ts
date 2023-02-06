@@ -1,3 +1,4 @@
+import { Request } from "express";
 import { Document, Schema } from "mongoose";
 
 export interface reviewT {
@@ -31,6 +32,11 @@ export interface IProductData extends Document {
   productImage: string;
   numberOfReviews: number;
   review: reviewT[];
+}
+
+// admin Auth
+export interface IAuthUser extends Request {
+  user: IUserData;
 }
 
 // https://github.com/adeJoe22/authsystem/tree/master/controllers
