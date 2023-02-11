@@ -4,7 +4,7 @@ import { IProductData } from "./AllInterfaces";
 
 interface Products extends Document, IProductData {}
 
-const ProductSchema: Schema<Products> = new Schema(
+const ProductSchema = new Schema(
   {
     name: {
       type: String,
@@ -21,17 +21,9 @@ const ProductSchema: Schema<Products> = new Schema(
     category: {
       type: String,
       required: [true, "Please enter product category e.g Fashion, Food"],
-      enum: [
-        "all",
-        "men's wear",
-        "women's  wear",
-        "eletronics",
-        "mobile phone",
-        "books",
-      ],
+      enum: ["All", "Electronics", "Books", "Mobile phones", "Fashion wears"],
       message:
-        "Please enter category as supplied: all, men's women wear, electronics, book, phone",
-      default: "all",
+        "Please enter category as supplied : All, Electronics, Books, Mobile phones,Fashion wears",
     },
     rating: {
       type: Number,
@@ -41,16 +33,28 @@ const ProductSchema: Schema<Products> = new Schema(
       type: Number,
       default: 0,
     },
-    review: [
+    reviews: [
       {
         user: {
-          types: Schema.Types.ObjectId,
-          ref: "Users",
+          type: Schema.Types.ObjectId,
+          ref: "User",
           required: true,
         },
-        name: { type: String, required: true },
-        rating: { type: String, required: true },
-        comment: { type: String, required: true },
+        name: {
+          type: Schema.Types.ObjectId,
+          ref: "User",
+          required: true,
+        },
+        rating: {
+          type: Schema.Types.ObjectId,
+          ref: "User",
+          required: true,
+        },
+        comment: {
+          type: Schema.Types.ObjectId,
+          ref: "User",
+          required: true,
+        },
       },
     ],
   },
@@ -60,6 +64,6 @@ const ProductSchema: Schema<Products> = new Schema(
   }
 );
 
-const ProductModel = model<Products>("products", ProductSchema);
+const ProductModel = model<Products>("Products Collection", ProductSchema);
 
 export default ProductModel;

@@ -7,8 +7,7 @@ export const isAdmin = async (
   next: NextFunction
 ) => {
   const user = req!.user;
-  const adminUser = user && user.role 
+  const adminUser = user && user.role;
   if (user.role === "admin") {
-    
   }
 };

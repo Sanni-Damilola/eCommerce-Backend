@@ -12,9 +12,9 @@ const port = envVariables.PORT;
 const app: Application = express();
 
 AppConfig(app);
-DBconnect()
+DBconnect();
 
-app.listen(port, () =>{
-    console.log("")
-    console.log(`Server is up and running on port ${port}`)
+app.listen(port, () => {
+  console.log("");
+  console.log(`Server is up and running on port ${port}`);
 });
