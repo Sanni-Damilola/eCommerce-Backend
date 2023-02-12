@@ -2,6 +2,7 @@ import { Schema, model, Document } from "mongoose";
 
 import { IProductData } from "./AllInterfaces";
 
+// product model
 interface Products extends Document, IProductData {}
 
 const ProductSchema = new Schema(
