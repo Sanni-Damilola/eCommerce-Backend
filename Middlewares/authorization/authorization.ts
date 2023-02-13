@@ -3,15 +3,14 @@ import jwt, { JwtPayload, Secret, VerifyErrors } from "jsonwebtoken";
 import { IUserData } from "../../Models/AllInterfaces";
 import userModel from "../../Models/user.models";
 import { AppError, HttpCode } from "../../Utils/AppError";
-import crypto from "crypto";
+import { envVariables } from "../../Config/environmentVariables";
 
 interface payLoad extends JwtPayload {
   _id: string;
   email: string;
 }
 
-const secret = crypto.randomBytes(32).toString("hex");
-console.log(secret);
+const secret = envVariables.JWT_SECRET_KEY
 
 export const generateToken = (user: payLoad) => {
   return jwt.sign(user, secret as Secret, { expiresIn: "1hr" });
