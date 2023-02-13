@@ -9,7 +9,7 @@ export const validator = (
 ) => {
   const value = schemaName.validate(body, {
     allowUnknown: true,
-    abortEarly: false,
+    abortEarly: false, // catch error
     stripUnknown: true,
   });
   try {
