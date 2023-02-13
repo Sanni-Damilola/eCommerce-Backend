@@ -16,7 +16,7 @@ DBconnect();
 
 app.listen(port, () => {
   console.log("");
-  console.log("Server is up and running on port ", port);
+  console.log(`Server is up and running on port ${port}`);
 });
 
 // user => backend {  server => application  => routes => controllerrs => model }
