@@ -6,4 +6,4 @@ declare global {
       user?: Record<string, any>;
     }
   }
-}
+} // declaring "user" as a global source
