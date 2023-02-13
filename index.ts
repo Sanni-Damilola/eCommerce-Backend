@@ -18,3 +18,7 @@ app.listen(port, () => {
   console.log("");
   console.log(`Server is up and running on port ${port}`);
 });
+
+
+
+// server => application  => routes => controllerrs => model
