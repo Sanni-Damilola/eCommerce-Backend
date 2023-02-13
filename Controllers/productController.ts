@@ -22,7 +22,7 @@ export const postProduct = AsyncHandler(
       next(
         new AppError({
           httpCode: HttpCode.BAD_REQUEST,
-          message: "",
+          message: "Product not created",
         })
       );
     }
