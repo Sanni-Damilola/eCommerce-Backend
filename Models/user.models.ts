@@ -45,4 +45,4 @@ const userSchema: Schema<Users> = new Schema(
 
 const userModel = model<Users>("Users Collection", userSchema);
 
-export default userModel;
+export default userModel; 
