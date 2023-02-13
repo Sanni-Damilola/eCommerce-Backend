@@ -4,10 +4,14 @@ import { IUserData } from "../../Models/AllInterfaces";
 import userModel from "../../Models/user.models";
 import { AppError, HttpCode } from "../../Utils/AppError";
 
+
+
 interface payLoad extends JwtPayload {
   _id: string;
   email: string;
 }
+
+const secret = crypto.
 
 const secret = "chgsdhjhjfkkdnkldsnoslsnksbsjvyu";
 
