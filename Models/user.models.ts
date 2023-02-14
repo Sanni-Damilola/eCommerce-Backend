@@ -1,5 +1,5 @@
 import { model, Schema, Document } from "mongoose";
-import isEmail from "validator/lib/isEmail";
+import {isEmail, } from "validator/lib/isEmail";
 
 import { IUserData } from "./AllInterfaces";
 
@@ -23,7 +23,6 @@ const userSchema: Schema<Users> = new Schema(
       type: String,
       required: [true, "Please enter your password"],
       minlength: 6,
-      alphanum: [true, "Password must be AlphaNumeric"],
     },
     confirmPassword: {
       type: String,
