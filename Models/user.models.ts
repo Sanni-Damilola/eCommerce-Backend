@@ -23,6 +23,7 @@ const userSchema: Schema<Users> = new Schema(
       type: String,
       required: [true, "Please enter your password"],
       minlength: 6,
+      numeric: [true, "Password must be AlphaNumeric"],
     },
     confirmPassword: {
       type: String,
@@ -45,4 +46,4 @@ const userSchema: Schema<Users> = new Schema(
 
 const userModel = model<Users>("Users Collection", userSchema);
 
-export default userModel; 
+export default userModel;
