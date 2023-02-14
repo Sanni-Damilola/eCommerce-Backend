@@ -23,7 +23,7 @@ const userSchema: Schema<Users> = new Schema(
       type: String,
       required: [true, "Please enter your password"],
       minlength: 6,
-      numeric: [true, "Password must be AlphaNumeric"],
+      alphanum: [true, "Password must be AlphaNumeric"],
     },
     confirmPassword: {
       type: String,
