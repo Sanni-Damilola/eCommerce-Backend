@@ -1,6 +1,6 @@
 import { model, Schema, Document } from "mongoose";
 import isEmail from "validator/lib/isEmail";
-import Alpha from "validator/lib/alpha";
+import isAlphanumeric from "validator/lib/isAlphanumeric";
 
 import { IUserData } from "./AllInterfaces";
 
@@ -24,7 +24,7 @@ const userSchema: Schema<Users> = new Schema(
       type: String,
       required: [true, "Please enter your password"],
       minlength: 6,
-      validate: [Alpha, "Password must contain alphabeat and number"],
+      validate: [isAlphanumeric, "Password must contain alphabeat and number"],
     },
     confirmPassword: {
       type: String,
