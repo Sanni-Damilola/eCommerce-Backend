@@ -1,6 +1,6 @@
 import { model, Schema, Document } from "mongoose";
 import isEmail from "validator/lib/isEmail";
-import Alpha from "validator/lib/isAlphanumeric";
+import Alpha from "validator/lib/alpha";
 
 import { IUserData } from "./AllInterfaces";
 
