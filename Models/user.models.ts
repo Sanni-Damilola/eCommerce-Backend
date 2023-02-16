@@ -74,6 +74,7 @@ userSchema.methods.removeFromCart = function (productId) {
   );
 
   this.cart.items = updateCart;
+  return this.save({ validateBeforeSave: false });
 }; // remove from cart
 
 userSchema.methods.clearCart = function () {
