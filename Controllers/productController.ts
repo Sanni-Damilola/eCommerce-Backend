@@ -66,7 +66,7 @@ export const addToCart = AsyncHandler(
     req: AuthenticatedBody<IAddProductToCart>,
     res: Response,
     next: NextFunction
-  ): Promise<Response> => {
+  ) => {
     // const product = await ProductModel.findById(req!.body!._id);
     const user = await userModel.findOne({ email: req!.user!.email });
 
@@ -86,6 +86,6 @@ export const addToCart = AsyncHandler(
       };
     }
 
-    return res.status()
+    return res.status();
   }
 );
