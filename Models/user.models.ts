@@ -77,6 +77,11 @@ userSchema.methods.addToCart = function (prodID: string, doDecrease: boolean) {
   ) {
     updateCartItem = [...this.cart.items];
   }
+
+  let newQuantity = 1
+  if () {
+    
+  }
 }; // add to cart
 
 userSchema.methods.removeFromCart = function (productId) {
