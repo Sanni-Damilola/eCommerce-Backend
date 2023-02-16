@@ -78,13 +78,12 @@ userSchema.methods.addToCart = function (prodID: string, doDecrease: boolean) {
     updateCartItem = [...this.cart.items];
   }
 
-  let newQuantity = 1
+  let newQuantity = 1;
   if (cartItemIndex <= 0) {
-    if (this.cart.items) {
-      
+    if (doDecrease) {
+      newQuantity = this.items[cartItemIndex].quantity - 1;
     }
-  }else{
-
+  } else {
   }
 }; // add to cart
 
