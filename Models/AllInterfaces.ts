@@ -16,7 +16,7 @@ export interface IUserData extends Document {
   confirmPassword: string;
   cart?: {
     items: {
-      products: Schema.Types.ObjectId;
+      productId: Schema.Types.ObjectId;
     };
     quantity: number;
   }[];

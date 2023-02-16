@@ -40,6 +40,23 @@ const userSchema: Schema<Users> = new Schema(
     },
   },
   {
+    cart: {
+      items: [
+        {
+          productId: {
+            type: Schema.Types.ObjectId,
+            ref: "Product",
+            required: [true, "Please select a producct"],
+          },
+          quantity: {
+            type: Number,
+            required: [true, "Please select a quantity"],
+          },
+        },
+      ],
+    },
+  },
+  {
     versionKey: false,
     timestamps: true,
   }
