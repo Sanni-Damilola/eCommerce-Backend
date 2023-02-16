@@ -54,3 +54,8 @@ export const getAllProduct = AsyncHandler(
     });
   }
 );
+
+
+export const addToCart = AsyncHandler(async(req: Request, res: Response, next: NextFunction):Promise<Response> => {
+
+})
