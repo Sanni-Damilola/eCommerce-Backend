@@ -74,9 +74,8 @@ export const addToCart = AsyncHandler(
         })
       );
 
-      const doDecrease = req.query.doDecrease === "true"
-      const updatedUser = await user!.addToCart()
-
+      const doDecrease = req.query.doDecrease === "true";
+      const updatedUser = await user!.addToCart(req.body.productId, doDecrease);
     }
   }
 );
