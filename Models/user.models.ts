@@ -2,7 +2,7 @@ import { model, Schema, Document } from "mongoose";
 import isEmail from "validator/lib/isEmail";
 import isAlphanumeric from "validator/lib/isAlphanumeric";
 
-import { IUserData } from "./AllInterfaces";
+import { ICartItems, IUserData } from "./AllInterfaces";
 
 interface Users extends Document, IUserData {
   clearCart(): Promise<void>;
@@ -66,6 +66,7 @@ const userSchema: Schema<Users> = new Schema(
 
 userSchema.methods.addToCart = function (prodID: string, doDecrease: boolean) {
   let cartItemIndex = -1;
+  let updateCartItem: ICartItems[] = [];
 }; // add to cart
 
 userSchema.methods.removeFromCart = function (productId) {
