@@ -6,7 +6,7 @@ import { IUserData } from "./AllInterfaces";
 
 interface Users extends Document, IUserData {
   clearCart(): Promise<void>;
-  removeFromCart(): Promise<void>;
+  removeFromCart(productId: string): Promise<void>;
 }
 
 const userSchema: Schema<Users> = new Schema(
