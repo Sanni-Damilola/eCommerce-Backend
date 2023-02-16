@@ -66,7 +66,10 @@ const userSchema: Schema<Users> = new Schema(
 
 userSchema.methods.addToCart = function () {};
 userSchema.methods.removeFromCart = function () {};
-userSchema.methods.clearCart = function () {};
+
+userSchema.methods.clearCart = function () {
+  this.cart = { items: [] };
+}; // clear
 
 const userModel = model<Users>("Users Collection", userSchema);
 
