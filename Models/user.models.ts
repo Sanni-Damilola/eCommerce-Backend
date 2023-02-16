@@ -79,8 +79,12 @@ userSchema.methods.addToCart = function (prodID: string, doDecrease: boolean) {
   }
 
   let newQuantity = 1
-  if () {
-    
+  if (cartItemIndex <= 0) {
+    if (this.cart.items) {
+      
+    }
+  }else{
+
   }
 }; // add to cart
 
