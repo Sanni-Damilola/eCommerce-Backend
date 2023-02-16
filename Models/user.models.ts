@@ -87,6 +87,7 @@ userSchema.methods.addToCart = function (prodID: string, doDecrease: boolean) {
       } else {
         newQuantity = this.cart.items[cartItemIndex].quantity + 1;
       }
+      updateCartItem[cartItemIndex].quantity = newQuantity;
     }
   } else {
   }
