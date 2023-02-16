@@ -2,7 +2,11 @@ import { Request, Response, NextFunction } from "express";
 import ProductModel from "../Models/products.models";
 import { AppError, HttpCode } from "../Utils/AppError";
 import { AsyncHandler } from "../Utils/AsyncHandler";
-import { IProductData, IUserData } from "../Models/AllInterfaces";
+import {
+  IAddProductToCart,
+  IProductData,
+  IUserData,
+} from "../Models/AllInterfaces";
 import userModel from "../Models/user.models";
 import { AuthenticatedBody } from "../Models/customInterface";
 
@@ -59,7 +63,7 @@ export const getAllProduct = AsyncHandler(
 
 export const addToCart = AsyncHandler(
   async (
-    req: AuthenticatedBody<IUserData>,
+    req: AuthenticatedBody<IAddProductToCart>,
     res: Response,
     next: NextFunction
   ): Promise<Response> => {
@@ -76,6 +80,10 @@ export const addToCart = AsyncHandler(
 
       const doDecrease = req.query.doDecrease === "true";
       const updatedUser = await user!.addToCart(req.body.productId, doDecrease);
+
+      const findalUpdate = {
+        user: updatedUser,
+      };
     }
   }
 );

@@ -45,7 +45,7 @@ export interface IAuthUser extends Request {
   user: IUserData;
 }
 
-export interface AddProductToCart extends IUserData {
+export interface IAddProductToCart extends IUserData {
   productId: string;
 }
 
