@@ -65,7 +65,11 @@ const userSchema: Schema<Users> = new Schema(
 );
 
 userSchema.methods.addToCart = function () {};
-userSchema.methods.removeFromCart = function () {};
+userSchema.methods.removeFromCart = function () {
+  this.cart.items.filter(
+    (items: { product: { toString: () => string } }) => {}
+  );
+};
 
 userSchema.methods.clearCart = function () {
   this.cart = { items: [] };
