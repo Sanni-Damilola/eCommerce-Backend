@@ -67,6 +67,15 @@ const userSchema: Schema<Users> = new Schema(
 userSchema.methods.addToCart = function (prodID: string, doDecrease: boolean) {
   let cartItemIndex = -1;
   let updateCartItem: ICartItems[] = [];
+
+  if (
+    this.cart.items.findIndex(
+      (cp: { productId: { toString: () => string } }) => {
+        return cp.productId.toString() === prodID.toString();
+      }
+    )
+  ) {
+  }
 }; // add to cart
 
 userSchema.methods.removeFromCart = function (productId) {
