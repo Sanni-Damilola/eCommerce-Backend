@@ -66,12 +66,4 @@ const userModel = model<Users>("Users Collection", userSchema);
 
 export default userModel;
 
-const animal = {
-  sound: "meow",
-  legs: 4,
-  act: function () {
-    return `A cat has ${this.legs} legs, and sound ${this.sound}`;
-  },
-};
 
-console.log(animal.act());
