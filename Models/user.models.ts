@@ -75,6 +75,7 @@ userSchema.methods.addToCart = function (prodID: string, doDecrease: boolean) {
       }
     )
   ) {
+    updateCartItem = [...this.cart.items];
   }
 }; // add to cart
 
