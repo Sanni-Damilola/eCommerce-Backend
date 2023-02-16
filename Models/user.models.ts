@@ -64,12 +64,9 @@ const userSchema: Schema<Users> = new Schema(
   }
 );
 
-userSchema.methods.addToCart = function (
-  prodID: string,
-  doDecrease: boolean
-) {
-  
-};
+userSchema.methods.addToCart = function (prodID: string, doDecrease: boolean) {
+  let cartItemIndex = -1;
+}; // add to cart
 
 userSchema.methods.removeFromCart = function (productId) {
   const updateCart = this.cart.items.filter(
