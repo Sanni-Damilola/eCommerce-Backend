@@ -22,4 +22,4 @@ Step 4: API Features
 - Endpoints: Pagination, filter, sort and search
 
 
-addtocart, clearcart, removefromcart
+addtocart, clearcart, removefromcart, getcart
