@@ -85,5 +85,7 @@ export const addToCart = AsyncHandler(
         user: updatedUser,
       };
     }
+
+    return res.status()
   }
 );
