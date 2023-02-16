@@ -90,7 +90,12 @@ userSchema.methods.addToCart = function (prodID: string, doDecrease: boolean) {
       updateCartItem[cartItemIndex].quantity = newQuantity;
     }
   } else {
+    updateCartItem.push({
+      productId: prodID,
+      quantity: newQuantity,
+    });
   }
+  
 }; // add to cart
 
 userSchema.methods.removeFromCart = function (productId) {
