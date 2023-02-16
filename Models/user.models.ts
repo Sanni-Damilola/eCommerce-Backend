@@ -95,7 +95,12 @@ userSchema.methods.addToCart = function (prodID: string, doDecrease: boolean) {
       quantity: newQuantity,
     });
   }
-  
+
+  const updateCart = {
+    items: updateCartItem,
+  };
+  this.cart.items = updateCart;
+  return this.save({ validateBeforeSave: false });
 }; // add to cart
 
 userSchema.methods.removeFromCart = function (productId) {
