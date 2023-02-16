@@ -8,6 +8,12 @@ export interface reviewT {
   comment: string;
 }
 
+// cart
+export interface ICartItems {
+  productId: string;
+  quantity: number;
+}
+
 // user
 export interface IUserData extends Document {
   name: string;
