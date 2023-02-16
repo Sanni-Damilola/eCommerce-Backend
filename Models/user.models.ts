@@ -4,7 +4,10 @@ import isAlphanumeric from "validator/lib/isAlphanumeric";
 
 import { IUserData } from "./AllInterfaces";
 
-interface Users extends Document, IUserData {}
+interface Users extends Document, IUserData {
+  clearCart(): Promise<void>;
+  removeFromCart(): Promise<void>;
+}
 
 const userSchema: Schema<Users> = new Schema(
   {
@@ -60,12 +63,10 @@ const userSchema: Schema<Users> = new Schema(
   }
 );
 
-userSchema.methods.addToCart = function(){}
-userSchema.methods.removeFromCart = function(){}
-userSchema.methods.clearCart = function(){}
+userSchema.methods.addToCart = function () {};
+userSchema.methods.removeFromCart = function () {};
+userSchema.methods.clearCart = function () {};
 
 const userModel = model<Users>("Users Collection", userSchema);
 
 export default userModel;
-
-
