@@ -65,14 +65,20 @@ const userSchema: Schema<Users> = new Schema(
 );
 
 userSchema.methods.addToCart = function () {};
-userSchema.methods.removeFromCart = function () {
-  this.cart.items.filter(
-    (items: { product: { toString: () => string } }) => {}
+
+userSchema.methods.removeFromCart = function (productId) {
+  const updateCart = this.cart.items.filter(
+    (items: { productId: { toString: () => string } }) => {
+      return items.productId.toString() !== productId;
+    }
   );
-};
+
+  this.cart.items = updateCart;
+}; // remove from cart
 
 userSchema.methods.clearCart = function () {
   this.cart = { items: [] };
+  return this.save();
 }; // clear cart
 
 const userModel = model<Users>("Users Collection", userSchema);
