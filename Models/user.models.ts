@@ -69,7 +69,7 @@ userSchema.methods.removeFromCart = function () {};
 
 userSchema.methods.clearCart = function () {
   this.cart = { items: [] };
-}; // clear
+}; // clear cart
 
 const userModel = model<Users>("Users Collection", userSchema);
 
