@@ -45,4 +45,8 @@ export interface IAuthUser extends Request {
   user: IUserData;
 }
 
+export interface AddProductToCart extends IUserData {
+  productId: string;
+}
+
 // https://github.com/adeJoe22/authsystem/tree/master/controllers

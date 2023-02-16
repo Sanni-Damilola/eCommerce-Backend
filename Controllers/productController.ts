@@ -73,6 +73,8 @@ export const addToCart = AsyncHandler(
           httpCode: HttpCode.NOT_FOUND,
         })
       );
+
+      const updatedUser = await user!.addToCart()
     }
   }
 );
