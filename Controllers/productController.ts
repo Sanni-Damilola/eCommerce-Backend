@@ -3,6 +3,7 @@ import ProductModel from "../Models/products.models";
 import { AppError, HttpCode } from "../Utils/AppError";
 import { AsyncHandler } from "../Utils/AsyncHandler";
 import { IProductData } from "../Models/AllInterfaces";
+import userModel from "../Models/user.models";
 
 export const postProduct = AsyncHandler(
   async (
@@ -57,5 +58,8 @@ export const getAllProduct = AsyncHandler(
 
 
 export const addToCart = AsyncHandler(async(req: Request, res: Response, next: NextFunction):Promise<Response> => {
+const product = await ProductModel.findById(req!.body!._id)
+const user = await userModel.findOne({email: req!.user!.email})
+
 
 })
