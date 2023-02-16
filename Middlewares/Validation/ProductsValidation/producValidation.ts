@@ -1,11 +1,11 @@
 import { Request, Response, NextFunction, RequestHandler } from "express";
 import { productSchemaValidation } from "./productSchema";
-import { validator } from "../Validator";
+import { validation } from "../Validator";
 
 export const postProductValidation: RequestHandler = (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
-  validator(productSchemaValidation.PostProduct, req.body, next);
+  validation(productSchemaValidation.PostProduct, req.body, next);
 };
