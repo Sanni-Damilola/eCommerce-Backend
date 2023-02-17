@@ -103,7 +103,7 @@ userSchema.methods.addToCart = function (prodID: string, doDecrease: boolean) {
   return this.save({ validateBeforeSave: false });
 }; // add to cart
 
-userSchema.methods.removeFromCart = function (productId) {
+userSchema.methods.removeFromCart = function (productId: string) {
   const updateCart = this.cart.items.filter(
     (items: { productId: { toString: () => string } }) => {
       return items.productId.toString() !== productId;
