@@ -8,10 +8,9 @@
 //   JWT_SECRET_KEY: process.env.JWT_SECRET_KEY as string
 // };
 
-
-import dotenv from "dotenv"
-dotenv.config()
+import dotenv from "dotenv";
+dotenv.config();
 
 export const envVaribalies = {
-  PORT: process.env.PORT as string
-}
+  PORT: process.env.PORT as string,
+};
