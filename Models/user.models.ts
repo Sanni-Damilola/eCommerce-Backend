@@ -70,8 +70,8 @@ userSchema.methods.addToCart = function (prodID: string, doDecrease: boolean) {
 
   if (
     this.cart.items.findIndex(
-      (item: { productId: { toString: () => string } }) => {
-        return item.productId.toString() === prodID.toString(); // 
+      (item: { productId: { toString: () => string } }) => { // deconstruction
+        return item.productId.toString() === prodID.toString(); // comparing the parameter and delete 
       }
     )
   ) {
