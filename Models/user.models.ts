@@ -70,8 +70,8 @@ userSchema.methods.addToCart = function (prodID: string, doDecrease: boolean) {
 
   if (
     this.cart.items.findIndex(
-      (item: { productId: { toString: () => string } }) => { // deconstruction
-        return item.productId.toString() === prodID.toString(); // comparing the parameter and delete 
+      (cp: { productId: { toString: () => string } }) => {
+        return cp.productId.toString() === prodID.toString();
       }
     )
   ) {
@@ -106,7 +106,8 @@ userSchema.methods.addToCart = function (prodID: string, doDecrease: boolean) {
 userSchema.methods.removeFromCart = function (productId: string) {
   const updateCart = this.cart.items.filter(
     (items: { productId: { toString: () => string } }) => {
-      return items.productId.toString() !== productId;
+      // deconstruction
+      return items.productId.toString() !== productId; // comparing the parameter and delete
     }
   );
 
