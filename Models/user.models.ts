@@ -81,7 +81,7 @@ userSchema.methods.addToCart = function (prodID: string, doDecrease: boolean) {
   let newQuantity = 1;
   if (cartItemIndex >= 0) {
     if (doDecrease) {
-      newQuantity = this.items[cartItemIndex].quantity - 1;
+      newQuantity = this.items[cartItemIndex].quantity - 1; // add quanity 
       if (newQuantity <= 0) {
         return this.removeFromCart(prodID);
       } else {
